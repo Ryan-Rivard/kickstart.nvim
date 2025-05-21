@@ -152,6 +152,10 @@ vim.o.splitbelow = true
 vim.o.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
+-- Set the tabs to 4 spaces
+vim.opt["tabstop"] = 4
+vim.opt["shiftwidth"] = 4
+
 -- Preview substitutions live, as you type!
 vim.o.inccommand = 'split'
 
@@ -282,6 +286,14 @@ require('lazy').setup({
         changedelete = { text = '~' },
       },
     },
+  },
+
+
+  -- autopairs
+  {
+    'windwp/nvim-autopairs',
+    event = "InsertEnter",
+    config = true
   },
 
   -- NOTE: Plugins can also be configured to run Lua code when they are loaded.
